@@ -95,7 +95,7 @@ file_list = glob.glob(directory + "*.json")
 
 # ## jsonをデータフレームに整形する関数
 
-# In[7]:
+# In[ ]:
 
 
 def json_to_df(target_file):
@@ -120,7 +120,7 @@ def json_to_df(target_file):
 
 # ## データフレームを結合し、csvにアウトプット
 
-# In[8]:
+# In[ ]:
 
 
 # 空のデータフレームを作成
@@ -134,10 +134,11 @@ for target_file in file_list:
 ranking.drop_duplicates(['date', 'keyword','domain'])
 
 # csvに格納
-ranking.to_csv("result.csv", index=False, mode='a', header=False)
+data_dir = '../../../02_data/02_competitor/02_AWR/'
+ranking.to_csv(data_dir + "AWR_result.csv", index=False, mode='a', header=False)
 
 
-# In[9]:
+# In[ ]:
 
 
 # pyファイルに変換して保存
